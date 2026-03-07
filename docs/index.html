@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>道中道 · Dao Zhong Dao</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
@@ -16,20 +16,18 @@
         body {
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: #f5f7fa;
-            height: 100vh;                /* 占满视口高度 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;                 /* 减少四周间距 */
+            min-height: 100vh;           /* 保证背景铺满，但不限制滚动 */
+            display: block;                /* 取消flex，恢复文档流 */
+            padding: 16px;
         }
 
         .card {
             max-width: 900px;
-            width: 100%;
+            margin: 0 auto;                /* 水平居中 */
             background: white;
             border-radius: 32px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            padding: 40px 32px;            /* 缩小卡片内边距 */
+            padding: 40px 32px;
         }
 
         /* 标题区 */
@@ -46,8 +44,8 @@
             text-align: center;
             color: #475569;
             border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 24px;           /* 减小底部间距 */
-            margin-bottom: 24px;             /* 减小下方间距 */
+            padding-bottom: 24px;
+            margin-bottom: 24px;
         }
 
         /* 核心原文：四行大号 */
@@ -57,7 +55,7 @@
             line-height: 1.5;
             text-align: center;
             color: #0f172a;
-            margin: 30px 0;                  /* 适当减小上下边距 */
+            margin: 30px 0;
         }
         .core-verse p {
             margin: 0.2em 0;
@@ -67,17 +65,17 @@
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;                       /* 减小列间距 */
+            gap: 24px;
             background: #f8fafc;
             border-radius: 24px;
-            padding: 24px 20px;               /* 缩小内边距 */
-            margin: 24px 0;                    /* 减小外边距 */
+            padding: 24px 20px;
+            margin: 24px 0;
         }
         .info-block {
             font-size: 1rem;
         }
         .info-block p {
-            margin: 6px 0;                     /* 略微减小段落间距 */
+            margin: 6px 0;
         }
         .info-block strong {
             color: #334155;
@@ -88,8 +86,8 @@
         .hashes {
             background: #f1f4f9;
             border-radius: 24px;
-            padding: 24px 20px;                /* 缩小内边距 */
-            margin: 24px 0 20px;                /* 调整外边距 */
+            padding: 24px 20px;
+            margin: 24px 0 20px;
             font-family: 'SF Mono', 'Fira Code', monospace;
             font-size: 0.85rem;
             word-break: break-word;
@@ -98,11 +96,11 @@
             font-size: 1.2rem;
             font-weight: 500;
             color: #1e293b;
-            margin-bottom: 16px;                /* 减小标题下边距 */
+            margin-bottom: 16px;
             font-family: system-ui, sans-serif;
         }
         .hash-item {
-            margin-bottom: 12px;                 /* 减小哈希项间距 */
+            margin-bottom: 12px;
             border-bottom: 1px dashed #cbd5e1;
             padding-bottom: 8px;
         }
@@ -124,7 +122,7 @@
         /* 道始流入口 */
         .entry {
             text-align: center;
-            margin: 32px 0 20px;                /* 减小上下边距 */
+            margin: 32px 0 20px;
         }
         .entry a {
             font-size: 1.3rem;
@@ -142,7 +140,7 @@
             text-align: center;
             font-size: 0.95rem;
             color: #64748b;
-            margin: 12px 0 8px;                 /* 减小边距 */
+            margin: 12px 0 8px;
             padding-top: 12px;
             border-top: 1px solid #e2e8f0;
         }
@@ -156,7 +154,7 @@
             text-align: center;
             font-size: 0.9rem;
             color: #64748b;
-            margin-top: 8px;                     /* 减小上边距 */
+            margin-top: 8px;
         }
         .footer p {
             margin: 3px 0;
